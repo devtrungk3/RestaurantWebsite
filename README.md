@@ -1,6 +1,6 @@
 - Using servlet
-- Page:
-+ Home
-+ Login - Register
-+ About
-+ Menu
+- Pages:
+  + Home
+  + Login - Register
+  + About
+  + Menu
