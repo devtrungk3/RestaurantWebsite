@@ -1,5 +1,5 @@
-Using servlet\n
-Page:
+- Using servlet
+- Page:
 + Home
 + Login - Register
 + About
