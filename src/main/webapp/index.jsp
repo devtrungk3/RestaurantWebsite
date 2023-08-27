@@ -11,8 +11,31 @@
 <body>
 	<jsp:include page="header.jsp" /> 
     <main class="main">
-        <section class="main-home">
-			
+        <section class="main_home">
+            <div class="main_container"></div>
+			<h1 class="main_title1">ABCDE</h1>
+            <p class="main_title2">restaurant</p>
+        </section>
+        <section class="order_section">
+            <div class="order_categories">
+                <div class="order_item">
+                    <img src="../images/starters.png" alt="">
+                    <p class="order_title">starters</p>
+                </div>
+                <div class="order_item">
+                    <img src="../images/starters.png" alt="">
+                    <p class="order_title">sandwiches</p>
+                </div>
+                <div class="order_item">
+                    <img src="../images/starters.png" alt="">
+                    <p class="order_title">mains</p>
+                </div>
+                <div class="order_item">
+                    <img src="../images/starters.png" alt="">
+                    <p class="order_title">desserts</p>
+                </div>
+            </div>
+            <a href="" class="button btn_order">order now</a>
         </section>
     </main>
 </body>
