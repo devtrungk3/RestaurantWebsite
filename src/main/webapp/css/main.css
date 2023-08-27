@@ -1,0 +1,10 @@
+.main-home {
+    background: url(../images/main-background.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    top: 60px;
+    background-attachment: fixed;
+}
+
+

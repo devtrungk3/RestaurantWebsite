@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Insert title here</title>
-	<link rel="stylesheet" type="text/css" href="css/styles.css?version=1">
+	<link rel="stylesheet" type="text/css" href="css/main.css?version=1">
 </head>
 <body>
 	<jsp:include page="header.jsp" /> 
