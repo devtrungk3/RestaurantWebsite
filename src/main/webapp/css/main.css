@@ -1,5 +1,3 @@
-/* Main */
-
 .main {
     margin-top: 60px;
 }
@@ -91,4 +89,145 @@
 
 .btn_order {
     padding: 10px 30px;
+}
+
+/* section about and order */
+
+.order_about_section {
+	background: url(../images/background2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+	height: 1100px;
+    position: relative;
+}
+
+.order_about_section .button {
+    padding: 5px 30px;
+}
+
+.about {
+    background-color: #fff;
+    width: 50%;
+    height: 650px;
+    top: 0;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+
+.order {
+    background-color: #fff;
+    width: 50%;
+    height: 450px;
+    top: 650px;
+    left: 0px;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+
+.order_about_section .title_container {
+    width: 50%;
+    border-bottom: 1px solid #000;
+    height: fit-content;
+    padding: 10px 0;
+}
+
+.order_about_section .title {
+    font-weight: 100;
+    font-size: 4rem;
+    text-transform: uppercase;
+    line-height: 70px;
+}
+
+.order_about_section .subtitle {
+    font-size: 1.6rem;
+    font-weight: 200;
+}
+
+.socials_container {
+    padding: 10px 0;
+}
+
+.socials_container img {
+    margin: 0 10px;
+    width: 40px;
+}
+
+.hours_container .container {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.subtitle2 {
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.hours_container .list {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.days_list {
+    text-align: end;
+    color: #696565;
+}
+
+.hours_list {
+    text-align: start;
+}
+
+.order .wrapper {
+    padding: 20px 0 40px 0;
+}
+
+.order .wrapper p {
+    font-weight: 300;
+}
+
+.order .wrapper .link_to_menu {
+    text-decoration: underline;
+}
+
+.connect_section {
+    width: 100%;
+    height: 85vh;
+    margin: 20px 0;
+    position: relative;
+}
+
+.connect_section .background {
+    background: url(../images/contact_us.png);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.connect_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.connect_container .title {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.connect_container i {
+    padding: 15px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
 }

@@ -39,3 +39,7 @@ a {
 .button:hover {
     background-color: #bf103f;
 }
+
+ul {
+    list-style: none;
+}
