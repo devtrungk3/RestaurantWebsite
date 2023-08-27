@@ -23,15 +23,15 @@
                     <p class="order_title">starters</p>
                 </div>
                 <div class="order_item">
-                    <img src="./images/starters.png" alt="">
+                    <img src="./images/sandwiches.png" alt="">
                     <p class="order_title">sandwiches</p>
                 </div>
                 <div class="order_item">
-                    <img src="./images/starters.png" alt="">
+                    <img src="./images/mains.png" alt="">
                     <p class="order_title">mains</p>
                 </div>
                 <div class="order_item">
-                    <img src="./images/starters.png" alt="">
+                    <img src="./images/desserts.png" alt="">
                     <p class="order_title">desserts</p>
                 </div>
             </div>
