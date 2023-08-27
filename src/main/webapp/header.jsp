@@ -11,9 +11,11 @@
 <body>
 	<header class="header">
         <ul class="header_container">
-            <li class="header_item">item1</li>
-            <li class="header_item">item2</li>
-            <li class="header_item">item3</li>
+            <li class="header_item">home</li>
+            <li class="header_item">menu</li>
+            <a href="login.jsp"">
+            	<li class="header_item">login</li>
+            </a>
             <li class="header_item">item4</li>
             <li class="header_item">item5</li>
             <li class="header_item">item6</li>
