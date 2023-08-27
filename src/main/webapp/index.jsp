@@ -13,7 +13,7 @@
     <main class="main">
         <section class="main_home">
             <div class="main_container"></div>
-			<h1 class="main_title1">ABCDE</h1>
+			<h1 class="main_title1">Third-T</h1>
             <p class="main_title2">restaurant</p>
         </section>
         <section class="order_section">
