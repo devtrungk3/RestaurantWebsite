@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login</title>
 <link rel="stylesheet"
 	href="//use.fontawesome.com/releases/v5.0.7/css/all.css" />
 <link rel="stylesheet" type="text/css" href="css/login.css?version=1">
@@ -18,16 +18,18 @@
 	<form action="">
 		<h3>Login Here</h3>
 
-		<label for="username">Username</label> <input type="text"
-			placeholder="Email or phone" id="username"> <label
+		<label for="username">Email</label> 
+		<input type="text"
+			placeholder="Enter your email" id="username">
+		<label
 			for="password">Password</label> <input type="text"
 			placeholder="Password" id="password">
 		<button>Log In</button>
 		<div class="other">
-			<div class="home">
+			<a class="home" href="index.jsp"">
 				<i class="fas fa-arrow-left"></i> Back to home
-			</div>
-			<div class="register">Register</div>
+			</a>
+			<a class="register" href="register.jsp">Register</a>
 		</div>
 	</form>
 </body>
