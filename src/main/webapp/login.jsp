@@ -1,36 +1,95 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Login</title>
 <link rel="stylesheet"
-	href="//use.fontawesome.com/releases/v5.0.7/css/all.css" />
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+	integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" type="text/css" href="css/login.css?version=1">
 </head>
 <body>
-	<div class="background">
-		<div class="shape"></div>
-		<div class="shape"></div>
+	<div class="container" id="container">
+		<div class="form-container sign-up-container">
+			<form action="#">
+				<h1>Create Account</h1>
+				<div class="social-container">
+					<a href="#" class="social"><i
+						class="fab fa-facebook-f"></i></a> <a href="#" class="social"><i
+						class="fab fa-google-plus-g"></i></a> <a href="#" class="social"><i
+						class="fab fa-linkedin-in"></i></a>
+				</div>
+				<span>or use your email for registration</span>
+				<div class="infield">
+					<input type="text" placeholder="Name" /> <label></label>
+				</div>
+				<div class="infield">
+					<input type="email" placeholder="Email" name="email" /> <label></label>
+				</div>
+				<div class="infield">
+					<input type="password" placeholder="Password" /> <label></label>
+				</div>
+				<button>Sign Up</button>
+			</form>
+		</div>
+		<div class="form-container sign-in-container">
+			<form action="#">
+				<h1>Sign in</h1>
+				<div class="social-container">
+					<a href="#" class="social"><i
+						class="fab fa-facebook-f"></i></a> <a href="#" class="social"><i
+						class="fab fa-google-plus-g"></i></a> <a href="#" class="social"><i
+						class="fab fa-linkedin-in"></i></a>
+				</div>
+				<span>or use your account</span>
+				<div class="infield">
+					<input type="email" placeholder="Email" name="email"
+						required="required" /> <label></label>
+				</div>
+				<div class="infield">
+					<input type="password" placeholder="Password" required="required" />
+					<label></label>
+				</div>
+				<a href="index.jsp" class="forgot">Return to home</a>
+				<button>Sign In</button>
+			</form>
+		</div>
+		<div class="overlay-container" id="overlayCon">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Welcome Back!</h1>
+					<p>To keep connected with us please login with your personal
+						info</p>
+					<button>Sign In</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>Hello, Friend!</h1>
+					<p>Enter your personal details and start journey with us</p>
+					<button>Sign Up</button>
+				</div>
+			</div>
+			<button id="overlayBtn"></button>
+		</div>
 	</div>
 
-	<form action="">
-		<h3>Login Here</h3>
+	<!-- js code -->
+	<script>
+            const container = document.getElementById("container");
+            const overlayCon = document.getElementById("overlayCon");
+            const overlayBtn = document.getElementById("overlayBtn");
 
-		<label for="username">Email</label> 
-		<input type="text"
-			placeholder="Enter your email" id="username">
-		<label
-			for="password">Password</label> <input type="text"
-			placeholder="Password" id="password">
-		<button>Log In</button>
-		<div class="other">
-			<a class="home" href="index.jsp"">
-				<i class="fas fa-arrow-left"></i> Back to home
-			</a>
-			<a class="register" href="register.jsp">Register</a>
-		</div>
-	</form>
+            overlayBtn.addEventListener("click", () => {
+                container.classList.toggle("right-panel-active");
+
+                overlayBtn.classList.remove("btnScaled");
+                window.requestAnimationFrame(() => {
+                    overlayBtn.classList.add("btnScaled");
+                });
+            });
+        </script>
 </body>
 </html>
