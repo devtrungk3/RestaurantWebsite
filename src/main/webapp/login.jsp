@@ -76,7 +76,7 @@
                         />
                         <label></label>
                     </div>
-                    <a href="../html/index.html" class="forgot">Return to home</a>
+                    <a href="index.jsp" class="forgot">Return to home</a>
                     <button>Sign In</button>
                 </form>
             </div>
