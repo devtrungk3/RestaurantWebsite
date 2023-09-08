@@ -18,6 +18,14 @@ body {
     --header-height: 60px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    margin-top: var(--header-height);
+}
+
 h1 {
     font-size: 6rem;
 }

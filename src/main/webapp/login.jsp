@@ -26,7 +26,7 @@
 			placeholder="Password" id="password">
 		<button>Log In</button>
 		<div class="other">
-			<a class="home" href="index.jsp"">
+			<a class="home" href="index.jsp">
 				<i class="fas fa-arrow-left"></i> Back to home
 			</a>
 			<a class="register" href="register.jsp">Register</a>
