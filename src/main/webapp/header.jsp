@@ -12,7 +12,9 @@
 	<header class="header">
         <ul class="header_container">
             <li class="header_item">home</li>
-            <li class="header_item">menu</li>
+            <a href="menu.jsp"">
+            	<li class="header_item">menu</li>
+            </a>
             <a href="login.jsp"">
             	<li class="header_item">login</li>
             </a>

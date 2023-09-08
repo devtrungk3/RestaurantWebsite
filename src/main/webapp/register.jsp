@@ -26,7 +26,7 @@
 		<input type="text" placeholder="Retype password" id="password">
 		<button>Register</button>
 		<div class="other">
-			<a class="home" href="index.jsp""> <i class="fas fa-arrow-left"></i>
+			<a class="home" href="index.jsp"> <i class="fas fa-arrow-left"></i>
 				Back to home
 			</a> <a class="login" href="login.jsp">Login</a>
 		</div>
