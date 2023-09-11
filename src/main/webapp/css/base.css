@@ -16,6 +16,7 @@ body {
 
 :root {
     --header-height: 60px;
+    --sub-header-height: 45px;
 }
 
 html {

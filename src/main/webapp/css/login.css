@@ -170,7 +170,6 @@ button {
 
 .overlay {
     position: relative;
-    /* background: var(--linear-grad); */
     background: url(../images/contact_us.png);
 	background-position: center;
 	background-repeat: no-repeat;
