@@ -45,7 +45,7 @@
                 </form>
             </div>
             <div class="form-container sign-in-container">
-                <form action="#">
+                <form action="login" method="post">
                     <h1>Sign in</h1>
                     <div class="social-container">
                         <a href="#" class="social"
@@ -59,6 +59,9 @@
                         ></a>
                     </div>
                     <span>or use your account</span>
+                    <% if (request.getAttribute("error") != null && request.getAttribute("error").toString().length() > 0) { %>
+                    <div class="error">${requestScope.error}</div>
+                    <% } else %><%="" %>
                     <div class="infield">
                         <input
                             type="email"
@@ -72,12 +75,13 @@
                         <input
                             type="password"
                             placeholder="Password"
+                            name="password"
                             required="required"
                         />
                         <label></label>
                     </div>
                     <a href="index.jsp" class="forgot">Return to home</a>
-                    <button>Sign In</button>
+                    <button type="submit">Sign In</button>
                 </form>
             </div>
             <div class="overlay-container" id="overlayCon">

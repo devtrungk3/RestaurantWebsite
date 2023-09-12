@@ -81,6 +81,10 @@ span {
     font-size: 12px;
 }
 
+.error {
+	color: #ff0000;
+}
+
 .infield {
     position: relative;
     margin: 8px 0px;

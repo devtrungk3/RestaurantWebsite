@@ -10,9 +10,9 @@ public class ConnectDB {
 	public Connection getConnection() {
 		Connection conn = null;
 		try {
-			String dbName = "";
+			String dbName = "restaurant_web";
 			String url = "jdbc:mysql://localhost/" + dbName;
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(url, user, pass);
 		} catch (Exception e) {
 			e.printStackTrace();
