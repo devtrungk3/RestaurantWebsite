@@ -11,7 +11,9 @@
 <body>
 	<header class="header">
         <ul class="header_container">
-            <li class="header_item">home</li>
+            <a href="index.jsp"">
+            	<li class="header_item">home</li>
+            </a>
             <a href="menu.jsp"">
             	<li class="header_item">menu</li>
             </a>
