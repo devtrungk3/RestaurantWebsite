@@ -35,12 +35,20 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("username", rs.getString(1).toString());
 				resp.sendRedirect("index.jsp");
 			} else {
-				req.setAttribute("error", "Email or password incorrect");
+				req.setAttribute("errorLogin", "Email or password incorrect");
 				RequestDispatcher dispatcher = req.getRequestDispatcher("/login.jsp");
 				dispatcher.forward(req, resp);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+		    if (conn != null) {
+		        try {
+		            conn.close();
+		        } catch (SQLException e) {
+		            e.printStackTrace();
+		        }
+		    }
 		}
 	}
 	

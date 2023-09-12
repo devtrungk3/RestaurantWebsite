@@ -15,7 +15,7 @@
 <body>
 	<div class="container" id="container">
             <div class="form-container sign-up-container">
-                <form action="#">
+                <form action="signup" method="post">
                     <h1>Create Account</h1>
                     <div class="social-container">
                         <a href="#" class="social"
@@ -29,16 +29,23 @@
                         ></a>
                     </div>
                     <span>or use your email for registration</span>
+                    <% if (request.getAttribute("errorSignUp") != null && request.getAttribute("errorSignUp").toString().length() > 0) { %>
+                    <div class="error">${requestScope.errorSignUp}</div>
+                    <% } else %><%="" %>
                     <div class="infield">
-                        <input type="text" placeholder="Name" />
+                        <input type="text" placeholder="Username" name="username" value="${requestScope.username}" required/>
                         <label></label>
                     </div>
                     <div class="infield">
-                        <input type="email" placeholder="Email" name="email" />
+                        <input type="email" placeholder="Email" name="email" value="${requestScope.email}" required/>
                         <label></label>
                     </div>
                     <div class="infield">
-                        <input type="password" placeholder="Password" />
+                        <input type="password" placeholder="Password" name="password" required/>
+                        <label></label>
+                    </div>
+                    <div class="infield">
+                        <input type="password" placeholder="Confirm password" name="confirm-password" required/>
                         <label></label>
                     </div>
                     <button>Sign Up</button>
@@ -59,15 +66,15 @@
                         ></a>
                     </div>
                     <span>or use your account</span>
-                    <% if (request.getAttribute("error") != null && request.getAttribute("error").toString().length() > 0) { %>
-                    <div class="error">${requestScope.error}</div>
+                    <% if (request.getAttribute("errorLogin") != null && request.getAttribute("errorLogin").toString().length() > 0) { %>
+                    <div class="error">${requestScope.errorLogin}</div>
                     <% } else %><%="" %>
                     <div class="infield">
                         <input
                             type="email"
                             placeholder="Email"
                             name="email"
-                            required="required"
+                            required
                         />
                         <label></label>
                     </div>
@@ -76,7 +83,7 @@
                             type="password"
                             placeholder="Password"
                             name="password"
-                            required="required"
+                            required
                         />
                         <label></label>
                     </div>
@@ -112,6 +119,10 @@
             const container = document.getElementById("container");
             const overlayCon = document.getElementById("overlayCon");
             const overlayBtn = document.getElementById("overlayBtn");
+            
+            var signupOpened = <%= request.getAttribute("signupOpened")%>;
+            
+            if (signupOpened) container.classList.toggle("right-panel-active");
 
             overlayBtn.addEventListener("click", () => {
                 container.classList.toggle("right-panel-active");
