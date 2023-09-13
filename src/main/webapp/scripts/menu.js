@@ -5,6 +5,7 @@ categories_list = document.querySelector('.categories_container');
 searchBarContainer = document.querySelector('.search-bar_container');
 searchBar = document.querySelector('.search-bar');
 
+
 window.onscroll = () => {
     if (window.scrollY > 500) {
         subHeader.style.transform = 'translateY(0)';

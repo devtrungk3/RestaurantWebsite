@@ -81,6 +81,10 @@ span {
     font-size: 12px;
 }
 
+.error {
+	color: #ff0000;
+}
+
 .infield {
     position: relative;
     margin: 8px 0px;
@@ -170,7 +174,6 @@ button {
 
 .overlay {
     position: relative;
-    /* background: var(--linear-grad); */
     background: url(../images/contact_us.png);
 	background-position: center;
 	background-repeat: no-repeat;

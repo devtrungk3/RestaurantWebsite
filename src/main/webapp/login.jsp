@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Login</title>
-<link rel="stylesheet"
+	<title>Login</title>
+	<link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
 	integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" type="text/css" href="css/login.css?version=1">
+	<link rel="stylesheet" type="text/css" href="css/login.css?version=1">
 </head>
 <body>
 	<div class="container" id="container">
@@ -45,7 +45,7 @@
                 </form>
             </div>
             <div class="form-container sign-in-container">
-                <form action="#">
+                <form action="login" method="post">
                     <h1>Sign in</h1>
                     <div class="social-container">
                         <a href="#" class="social"
@@ -59,6 +59,9 @@
                         ></a>
                     </div>
                     <span>or use your account</span>
+                    <% if (request.getAttribute("error") != null && request.getAttribute("error").toString().length() > 0) { %>
+                    <div class="error">${requestScope.error}</div>
+                    <% } else %><%="" %>
                     <div class="infield">
                         <input
                             type="email"
@@ -72,12 +75,13 @@
                         <input
                             type="password"
                             placeholder="Password"
+                            name="password"
                             required="required"
                         />
                         <label></label>
                     </div>
                     <a href="index.jsp" class="forgot">Return to home</a>
-                    <button>Sign In</button>
+                    <button type="submit">Sign In</button>
                 </form>
             </div>
             <div class="overlay-container" id="overlayCon">
