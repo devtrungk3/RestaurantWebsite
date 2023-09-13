@@ -35,9 +35,6 @@
      		<% } else { %>
             <li class="header_item"><a href="login.jsp">login</a></li>
             <% } %>
-            <li class="header_item">item4</li>
-            <li class="header_item">item5</li>
-            <li class="header_item">item6</li>
         </ul>
     </header>
 </body>
