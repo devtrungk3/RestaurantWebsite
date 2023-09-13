@@ -51,9 +51,9 @@
 					<p class="subtitle">our restaurant</p>
 				</div>
 				<div class="socials_container">
-					<img src="../images/ic_phone.png" alt=""> <img
-						src="../images/ic_email.png" alt=""> <img
-						src="../images/ic_location.png" alt="">
+					<i class="fa-solid fa-phone"></i>
+					<i class="fa-solid fa-envelope"></i>
+					<i class="fa-solid fa-location-dot"></i>
 				</div>
 				<div class="hours_container">
 					<h3 class="subtitle2">HOURS</h3>
