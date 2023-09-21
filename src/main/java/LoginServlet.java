@@ -26,10 +26,10 @@ public class LoginServlet extends HttpServlet {
 		Connection conn = connect.getConnection();
 		try {
 			String sql = "SELECT username FROM customer WHERE email=? AND password=?";
-			PreparedStatement pstm = conn.prepareStatement(sql);
-			pstm.setString(1, email);
-			pstm.setString(2, password);
-			ResultSet rs = pstm.executeQuery();
+			PreparedStatement stm = conn.prepareStatement(sql);
+			stm.setString(1, email);
+			stm.setString(2, password);
+			ResultSet rs = stm.executeQuery();
 			if (rs.next()) {
 				HttpSession session = req.getSession();
 				session.setAttribute("username", rs.getString(1).toString());

@@ -1,3 +1,6 @@
+<%@page import="bean.MenuItem"%>
+<%@page import="java.util.List"%>
+<%@ page import="bean.CategoryItem" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,16 +13,21 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+<% 
+List<CategoryItem> categoryItems = (List<CategoryItem>) request.getAttribute("categoryItems");
+List<MenuItem> menuItems = (List<MenuItem>) request.getAttribute("menuItems");
+%>
 	<jsp:include page="header.jsp" /> 
     <main class="main_menu">
         <header class="sub-header">
             <ul class="sub-header_container">
-                <li class="categories_item"><a href="#starters">starters</a></li>
-                <li class="categories_item"><a href="#sandwiches">sandwiches</a></li>
-                <li class="categories_item"><a href="#mains">mains</a></li>
-                <li class="categories_item"><a href="#desserts">desserts</a></li>
-                <li class="categories_item"><a href="#beverages">beverages</a></li>
-                <li class="categories_item"><a href="#">more</a></li>
+            	<%
+				for (CategoryItem item : categoryItems) {
+				%>
+                <li class="categories_item">
+                	<a href="#<%=item.getName()%>"><%=item.getName()%></a>
+               	</li>
+               	<% } %>
             </ul>
         </header>
         <section class="menu_header">
@@ -30,235 +38,43 @@
                 <button class="search_close-btn"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <ul class="categories_container">
-                <li class="categories_item"><a href="#starters">starters</a></li>
-                <li class="categories_item"><a href="#sandwiches">sandwiches</a></li>
-                <li class="categories_item"><a href="#mains">mains</a></li>
-                <li class="categories_item"><a href="#desserts">desserts</a></li>
-                <li class="categories_item"><a href="#beverages">beverages</a></li>
-                <li class="categories_item"><a href="#">more</a></li>
+            	<%
+				for (CategoryItem item : categoryItems) {
+				%>
+                <li class="categories_item">
+                	<a href="#<%=item.getName()%>"><%=item.getName()%></a>
+               	</li>
+               	<% } %>
             </ul>
         </section>
         <section class="menu_container">
-        	<div id="starters" style="height: 60px"></div>
-            <div class="memu_title">Starters</div>
+        	<%
+        	String lastCategory = "";
+        	for (int i=0; i < menuItems.size(); i++) {
+        		MenuItem item = menuItems.get(i);
+        		if (!lastCategory.equals(item.getCategory())) {
+        			lastCategory = item.getCategory();
+        	%>
+        	<div id="<%=item.getCategory()%>" style="height: 60px"></div>
+            <div class="memu_title"><%=item.getCategory()%></div>
             <div class="menu_grid">
+            <% } %>
                 <div class="menu_item">
                     <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
+                        <div class="menu_name"><%=item.getName()%></div>
+                        <div class="menu_desc"><%=item.getDescription()%></div>
+                        <div class="menu_price"><%=item.getPrice()%>$</div>
                     </div>
                     <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
+                        <img src="<%=item.getUrl()%>" alt="">
                     </div>
                 </div>
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
+            <% 
+            if (i+1 < menuItems.size() && !item.getCategory().equals(menuItems.get(i+1).getCategory())) {
+            %>
             </div>
-            <div id="sandwiches" style="height: 60px"></div>
-            <div class="memu_title">Sandwiches</div>
-            <div class="menu_grid">
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-            </div>
-            <div id="mains" style="height: 60px"></div>
-            <div class="memu_title">Mains</div>
-            <div class="menu_grid">
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-            </div>
-            <div id="desserts" style="height: 60px"></div>
-            <div class="memu_title">Desserts</div>
-            <div class="menu_grid">
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-            </div>
-        	<div id="beverages" style="height: 60px"></div>
-        	<div class="memu_title">Beverages</div>
-            <div class="menu_grid">
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-                <div class="menu_item">
-                    <div class="menu_content">
-                        <div class="menu_name">Creole Soul Chicken</div>
-                        <div class="menu_desc">Our signature soy chicken nuggets panko-breaded with Cajun and rosemary seasoning and fried. Served with our hickory-smoked vidalia dressing.</div>
-                        <div class="menu_price">10.00$</div>
-                    </div>
-                    <div class="menu_img">
-                        <img src="https://133235642.cdn6.editmysite.com/uploads/1/3/3/2/133235642/s359720169423283389_p128_i1_w6126.jpeg?width=400&optimize=medium" alt="">
-                    </div>
-                </div>
-            </div>
+            <% } %>
+            <% } %>
         </section>
     </main>
     <script src="scripts/menu.js"></script>

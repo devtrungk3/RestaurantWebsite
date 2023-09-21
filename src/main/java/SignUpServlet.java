@@ -35,11 +35,11 @@ public class SignUpServlet extends HttpServlet {
 		} else {
 			try {
 				String sql = "INSERT INTO customer(`email`, `password`, `username`, `phone`, `address`) VALUES (?, ?, ?, NULL, NULL)";
-				PreparedStatement pstm = conn.prepareStatement(sql);
-				pstm.setString(1, email);
-				pstm.setString(2, encrypt(password));
-				pstm.setString(3, username);
-				pstm.execute();
+				PreparedStatement stm = conn.prepareStatement(sql);
+				stm.setString(1, email);
+				stm.setString(2, encrypt(password));
+				stm.setString(3, username);
+				stm.execute();
 				HttpSession session = req.getSession();
 				session.setAttribute("username", username);
 				resp.sendRedirect("index.jsp");
