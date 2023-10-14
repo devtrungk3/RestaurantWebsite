@@ -21,9 +21,16 @@ openSearch.onclick = () => {
     searchBarContainer.style.display = 'flex';
     openSearch.style.display = 'none';
 }
+
 closeSearch.onclick = () => {
-    categories_list.style.display = 'flex';
-    searchBarContainer.style.display = 'none';
-    searchBar.value = '';
-    openSearch.style.display = 'block';
+	console.log('jio');
+    if (searchBar.value.length != 0) {
+        searchBar.value = "";
+        startSearch();
+    } else {
+        categories_list.style.display = 'flex';
+        searchBarContainer.style.display = 'none';
+        searchBar.value = '';
+        openSearch.style.display = 'block';
+    }
 }

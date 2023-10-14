@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.google.gson.Gson;
+
 import bean.CategoryItem;
 import bean.MenuItem;
 import jakarta.servlet.RequestDispatcher;
@@ -60,6 +62,8 @@ public class MenuServlet extends HttpServlet{
 		
 		req.setAttribute("categoryItems", categoryItems);
 		req.setAttribute("menuItems", menuItems);
+		String jsonMenuItems = new Gson().toJson(menuItems);
+		req.setAttribute("jsonMenuItems", jsonMenuItems);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/menu.jsp");
 		dispatcher.forward(req, resp);
 	}

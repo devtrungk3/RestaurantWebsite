@@ -47,7 +47,7 @@ List<MenuItem> menuItems = (List<MenuItem>) request.getAttribute("menuItems");
                	<% } %>
             </ul>
         </section>
-        <section class="menu_container">
+        <section class="menu_container" id="menu_container">
         	<%
         	String lastCategory = "";
         	for (int i=0; i < menuItems.size(); i++) {
@@ -57,12 +57,14 @@ List<MenuItem> menuItems = (List<MenuItem>) request.getAttribute("menuItems");
         	%>
         	<div id="<%=item.getCategory()%>" style="height: 60px"></div>
             <div class="memu_title"><%=item.getCategory()%></div>
-            <div class="menu_grid">
+            <div class="menu_grid" id="menu_grid_<%=item.getCategory()%>">
             <% } %>
                 <div class="menu_item">
                     <div class="menu_content">
                         <div class="menu_name"><%=item.getName()%></div>
+                        <% if (item.getDescription() != null) { %>
                         <div class="menu_desc"><%=item.getDescription()%></div>
+                        <% } %>
                         <div class="menu_price"><%=item.getPrice()%>$</div>
                     </div>
                     <div class="menu_img">
@@ -77,6 +79,48 @@ List<MenuItem> menuItems = (List<MenuItem>) request.getAttribute("menuItems");
             <% } %>
         </section>
     </main>
+    <script>
+    	var menuItems = JSON.parse('<%=request.getAttribute("jsonMenuItems")%>');
+    	
+    	var searchTimeout;
+    	var lastCate = '';
+    	var searchBar = document.querySelector('.search-bar');
+    	searchBar.addEventListener('input', function() {
+    		clearTimeout(searchTimeout);
+    		searchTimeout = setTimeout(function() {
+    			startSearch();
+    		}, 500);
+    	});
+    	
+    	function startSearch() {
+    		var menu_container = document.getElementById('menu_container');
+    		menu_container.innerHTML = "";
+			for (var i=0; i<menuItems.length; i++) {
+				if (menuItems[i].name.toLowerCase().includes(searchBar.value.toLowerCase())) {
+					if (lastCate != menuItems[i].category) {
+						lastCate = menuItems[i].category;
+						menu_container.innerHTML +=
+						"<div id='"+ lastCate +"' style='height: 60px'></div>" +
+			            "<div class='memu_title'>"+ lastCate +"</div>" +
+			            "<div class='menu_grid' id='menu_grid_"+ lastCate +"'></div>";
+					}
+					var menu_grid = document.getElementById('menu_grid_'+lastCate);
+					if (menuItems[i].description == null) menuItems[i].description = "";
+					if (menu_grid != null) {
+						menu_grid.innerHTML +=
+						"<div class='menu_item'>" +
+							"<div class='menu_content'>" +
+								"<div class='menu_name'>"+ menuItems[i].name +"</div>" +
+								"<div class='menu_desc'>"+menuItems[i].description+"</div>" +
+								"<div class='menu_price'>"+menuItems[i].price+"$</div>" +
+							"</div>" +
+							"<div class='menu_img'><img src='"+ menuItems[i].url +"' alt=''></div>" +
+						"</div>";
+					}
+				}
+			}
+    	}
+    </script>
     <script src="scripts/menu.js"></script>
 </body>
 </html>

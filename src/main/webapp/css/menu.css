@@ -1,5 +1,6 @@
 .main_menu {
     background-color: #f6f7f9;
+    padding-bottom: 100px;
 }
 
 .sub-header {
@@ -115,6 +116,7 @@
     display: flex;
     align-items: stretch;
     justify-content: space-between;
+    position: relative;
 }
 
 .menu_content {
@@ -122,7 +124,7 @@
 }
 
 .menu_name {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
@@ -136,6 +138,9 @@
 
 .menu_price {
     font-weight: 600;
+    font-size: 1.1rem;
+    position: absolute;
+    bottom: 10px;
 }
 
 .menu_img {
