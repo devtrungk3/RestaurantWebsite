@@ -16,6 +16,7 @@
         <ul class="header_container">
             <li class="header_item"><a href="index.jsp">home</a></li>
      		<li class="header_item"><a href="menuServlet">menu</a></li>
+     		<li class="header_item"><a href="about.jsp">about</a></li>
      		<% if(ses.getAttribute("username") != null) { %>
      		<li class="header_item" id="username">
      			<%=ses.getAttribute("username") %>
