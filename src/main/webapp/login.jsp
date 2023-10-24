@@ -48,6 +48,7 @@
                         <input type="password" placeholder="Confirm password" name="confirm-password" required/>
                         <label></label>
                     </div>
+                    <a href="index.jsp" class="forgot">Return to home</a>
                     <button>Sign Up</button>
                 </form>
             </div>
