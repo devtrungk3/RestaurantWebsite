@@ -104,6 +104,8 @@
 			</div>
 		</section>
 	</main>
+	
+	<jsp:include page="footer.jsp" />
 
 	<button id="topBtn">
 		<i class="fa-solid fa-arrow-up fa-fade" style="color: black;"></i>
