@@ -8,7 +8,7 @@
     top: 0;
     right: 0;
     box-shadow: 0px -8px 7px 7px gray;
-    z-index: 999;
+    z-index: 1;
 }
 
 .header_container {
@@ -70,3 +70,25 @@ a {
     text-transform: uppercase;
     padding: 0 20px;
 }
+
+/* -----------------------------side bar-------------------------- */
+.button-close {
+    display: flex; 
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+w3-sidebar:hover {
+    background-color: none;
+}
+
+.fa-phone, .fa-location-dot, .fa-envelope {
+    transition: 0.5s;
+}
+
+.fa-phone:hover, .fa-location-dot:hover, .fa-envelope:hover {
+    cursor: pointer;
+    color: darkgray;
+}
+
+
