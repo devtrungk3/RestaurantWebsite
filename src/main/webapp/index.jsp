@@ -12,8 +12,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 	integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 </head>
 <body>
 	<jsp:include page="header.jsp" />
@@ -51,8 +50,7 @@
 					<p class="subtitle">our restaurant</p>
 				</div>
 				<div class="socials_container">
-					<i class="fa-solid fa-phone"></i>
-					<i class="fa-solid fa-envelope"></i>
+					<i class="fa-solid fa-phone"></i> <i class="fa-solid fa-envelope"></i>
 					<i class="fa-solid fa-location-dot"></i>
 				</div>
 				<div class="hours_container">
@@ -105,9 +103,14 @@
 		</section>
 	</main>
 
+	<jsp:include page="footer.jsp" />
+
 	<button id="topBtn">
 		<i class="fa-solid fa-arrow-up fa-fade" style="color: black;"></i>
 	</button>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 	<script src="scripts/backToTop.js"></script>
 
