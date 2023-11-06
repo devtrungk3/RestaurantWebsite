@@ -112,3 +112,10 @@ body {
     font-size: 60px;
     border-bottom: 1px solid black;
 }
+
+.food-list-img{
+	max-width: 100%;
+	width: 295px;
+	padding: 0px !important;
+	margin: 3px;
+}	

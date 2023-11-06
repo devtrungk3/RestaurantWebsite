@@ -127,7 +127,73 @@
 				</div>
 			</div>
 		</section>
-		<section class="blur_bg mx-5"
+		
+		<section class = "food-list justify-content-center">
+			<div id="informantion_container" class="row justify-content-center mb-4">
+				<div
+					class="d-flex justify-content-between col-8 border-bottom border-black px-0 py-1"
+					style="border-bottom-color: black !important; border-bottom-width: 1.5px">
+					<div class="px-0">
+						<p class="mb-0"
+							style="line-height: 1.6rem; font-size: 15px; letter-spacing: 0.25rem">
+							VEGAN COMFORT FOOD</p>
+					</div>
+					<div class="px-0">
+						<p class="mb-0"
+							style="line-height: 1.6rem; font-size: 15px; letter-spacing: 0.25rem">
+							140 WEST 4TH STREET</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-8 container text-center">
+				<div class="row">
+					<a class="tile col food-list-img" href="#"> 
+						<img class="food-list-img"  src="./images/food-list1.png">
+					</a>
+					<a class="tile col food-list-img" href="#"> 
+						<img class="food-list-img"  src="./images/food-list2.png">
+					</a>
+					<a class="tile col food-list-img" href="#"> 
+						<img class="food-list-img"  src="./images/food-list3.png">
+					</a>
+				</div>
+				<div class="row">
+					<a class="tile col food-list-img" href="#"> 
+						<img class="food-list-img"  src="./images/food-list4.png">
+					</a>
+					<a class="tile col food-list-img" href="#"> 
+						<img class="food-list-img"  src="./images/food-list5.png">
+					</a>
+					<a class="tile col food-list-img" href="#"> 
+						<img class="food-list-img"  src="./images/food-list6.png">
+					</a>
+				</div>
+				<div class="row">
+					<a class="tile col food-list-img" href="#"> 
+						<img class="food-list-img"  src="./images/food-list7.png">
+					</a>
+					<a class="tile col food-list-img" href="#"> 
+						<img class="food-list-img"  src="./images/food-list8.png">
+					</a>
+					<a class="tile col food-list-img" href="#"> 
+						<img class="food-list-img" src="./images/food-list9.png">
+					</a>
+				</div>
+				<div class="row">
+					<a class="tile col food-list-img" href="#"> 
+						<img class="food-list-img" src="./images/food-list10.png">
+					</a>
+					<a class="tile col food-list-img" href="#"> 
+						<img class="food-list-img" src="./images/food-list11.png">
+					</a>
+					<a class="tile col food-list-img" href="#"> 
+						<img class="food-list-img" src="./images/food-list12.png">
+					</a>
+				</div>
+			</div>
+		</section>
+		
+		<section class="blur_bg text-center mx-5 mt-5"
 			style="height: 650px; display: flex; justify-content: center; align-items: center;">
 			<div class="background"></div>
 			<div class="deli" style="position: absolute;">
